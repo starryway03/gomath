@@ -28,3 +28,21 @@ func TestMultiply(t *testing.T){
 		t.Errorf("Sum was incorrect, got : %d ,want :%d",s,want)
 	}
 }
+
+func BenchmarkSum(b *testing.B) {
+	for i:=0;i<b.N;i++{
+		Sum(1,2,3,4)
+	}
+}
+
+func BenchmarkSubstract(b *testing.B) {
+	for i:=0;i<b.N;i++{
+		Substract(7,1,2,3,4)
+	}
+}
+
+func BenchmarkMultiply(b *testing.B) {
+	for i:=0;i<b.N;i++{
+		Multiply(1,2,3,4)
+	}
+}
